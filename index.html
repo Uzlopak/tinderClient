@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tinder Privacy Destroyer</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    
+<!--     
+    <script src="https://connect.facebook.net/en_US/sdk.js" type="text/javascript"></script>
+ -->
+    <script src="config.js" type="text/javascript"></script>
+    <script src="js/facebook.js" type="text/javascript"></script>
+    <script src="js/gmap.js" type="text/javascript"></script>
+    <script src="js/tcpInterface.js" type="text/javascript"></script>
+    <script src="js/stalk.js" type="text/javascript"></script>
+    <script src="js/tinder.js" type="text/javascript"></script>
+    <script src="template/ui.js" type="text/javascript"></script>
+
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/jquery-ui.min.js"></script>
+    <script src="vendor/jquery.dialogextend.min.js"></script>
+
+    <script src="js/main.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="template/style.css" type="text/css" />
+    <link rel="stylesheet" href="template/jquery-ui.min.css" type="text/css" />
+  </head>
+  <body>
+    <div id="navigation">
+    <input type="button" value="load Tinder-Token" id="loadByTinderToken"/>
+    <br />
+    <br />
+    
+    <div class="profile" id="activeUser">
+    <img class="foto" id="activeUserPhoto" width="84" height="84"/>
+    <span class="name" id="activeUserName"></span>
+    <span class="age">age: <b id="activeUserAge"></b></span>
+    
+    </div>
+    
+    <input type="button" value="Recommendations" id="openRecommentationsWindow"/>
+    <input type="button" value="Matches" id="openMatchesWindow"/>
+    </div>
+    
+    
+    <div id="map"></div>
+    <script>
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+  </body>
+</html>

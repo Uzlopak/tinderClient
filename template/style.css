@@ -1,0 +1,62 @@
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#navigation {
+  width: 300px;
+  height: 100%;
+  float:left;
+}      
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 100%;
+}
+#loadByTinderToken{
+    float: left;
+    margin: auto;
+    width: 130px;
+    display: block;
+    clear: both;
+}
+
+.profile {
+	border: 1px solid #ddd;
+	background-color: #eee;
+	float: left;
+	width: 100px;
+	height: 204px;
+	margin: 4px;
+}
+
+.profile .foto {
+	width: 84px;
+	height: 84px;
+	margin: 8px 8px 4px 8px;
+}
+
+.profile .name {
+	display:block;
+	height: 16px; 
+	margin: auto 8px;
+}
+.profile .age {
+	display:block; 
+	height: 16px; 
+	margin: auto 8px;
+}
+
+.profile .ui-button{
+	padding: 4px;
+	margin: 4px 0px 3px 3px;
+}
+
+.profile.prey {
+	position: fixed;
+	z-index: 999999;
+	right: 10px;
+	top: 10px;
+}
