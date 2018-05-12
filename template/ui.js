@@ -77,12 +77,14 @@ function showRecommendationsWindow() {
                   text: "Like all",
                   icon: "ui-icon-heart",
                   click: function() {
+					$(".recommmendationsWindow .tpd-like").trigger( "click" );
                   }
                 },
                 {
                     text: "Pass all",
                     icon: "ui-icon-closethick",
                     click: function() {
+					$(".recommmendationsWindow .tpd-pass").trigger( "click" );
                     }
                   }
               ]
@@ -139,8 +141,8 @@ function generateProfileBox (profile) {
             '<span class="name">' + profile.name + '</span>' + 
             '<span class="age">age: <b>' + calculateAge(profile.birth_date) + '</b></span>' +
             '<button type="button" class="ui-button ui-corner-all ui-widget tpd-localize"><span class="ui-button-icon ui-icon ui-icon-flag"></span></button>' +
-            '<button type="button" class="ui-button ui-corner-all ui-widget"><span class="ui-button-icon ui-icon ui-icon-heart"></span></button>' +
-            '<button type="button" class="ui-button ui-corner-all ui-widget"><span class="ui-button-icon ui-icon ui-icon-closethick"></span></button>' +
+            '<button type="button" class="ui-button ui-corner-all ui-widget tpd-like"><span class="ui-button-icon ui-icon ui-icon-heart"></span></button>' +
+            '<button type="button" class="ui-button ui-corner-all ui-widget tpd-pass"><span class="ui-button-icon ui-icon ui-icon-closethick"></span></button>' +
             '<button type="button" class="ui-button ui-corner-all ui-widget ui-state-disabled"><span class="ui-button-icon ui-icon ui-icon-comment"></span></button>' +
             '<button type="button" class="ui-button ui-corner-all ui-widget"><span class="ui-button-icon ui-icon ui-icon-star"></span></button>' +
             '<button type="button" class="ui-button ui-corner-all ui-widget"><span class="ui-button-icon ui-icon ui-icon-alert"></span></button>' +
@@ -152,7 +154,6 @@ function generateProfileBox (profile) {
 
 function attachEventHandlers(element) {
 	element.children('.tpd-localize').on('click', function () {
-		
 		var profileId = $(this).parent().data('id');
 		getProfileData(profileId, function (profile) {
 				generateProfileBox(profile.results).addClass('prey').appendTo(document.body);
@@ -164,6 +165,15 @@ function attachEventHandlers(element) {
 					lon: positionLon
 				})
 		});
-		
+	});
+	element.children('.tpd-like').on('click', function () {
+		var profileId = $(this).parent().data('id');
+		likeUser(profileId, function (response) {if(response.match) {alert("matched!")}});
+		element.remove();
+	});
+	element.children('.tpd-pass').on('click', function () {
+		var profileId = $(this).parent().data('id');
+		passUser(profileId);
+		element.remove();
 	});
 }
