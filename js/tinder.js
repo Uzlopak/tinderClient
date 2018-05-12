@@ -3,14 +3,24 @@ function getProfileData(userId, callback) {
   doXMLHttpRequest("https://api.gotinder.com/user/" + userId, callback);
 }
 
+function getMeta(callback) {
+  callback = callback || function (response) {console.log(response)};
+  doXMLHttpRequest("https://api.gotinder.com/meta", callback);
+}
+
 function likeUser(userId, callback) {
   callback = callback || function (response) {console.log(response)};
-  doXMLHttpRequest("https://api.gotinder.com/like/" + userId, callback);
+  doXMLHttpRequest("https://api.gotinder.com/like/" + userId, callback, {});
+}
+
+function superLikeUser(userId, callback) {
+  callback = callback || function (response) {console.log(response)};
+  doXMLHttpRequest("https://api.gotinder.com/like/" + userId + "/super/", callback, {});
 }
 
 function passUser(userId, callback) {
   callback = callback || function (response) {console.log(response)};
-  doXMLHttpRequest("https://api.gotinder.com/pass/" + userId, callback);
+  doXMLHttpRequest("https://api.gotinder.com/pass/" + userId, callback, {});
 }
 
 function getRecommendations(callback) {
